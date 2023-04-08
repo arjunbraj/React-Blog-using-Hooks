@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { firestore } from "../firebase";
+// import styled from 'styled-components';
+
+// const PostSubTitle = styled.p`
+//     font-size: 30;
+//     `;
 
 function Home(){
 
@@ -20,7 +25,7 @@ function Home(){
 
     return (
         <div className="home">
-            <h1>React Blog using Hooks</h1>
+            <h1 style={styles.heading}>React Blog using Hooks</h1>
             <div id="blog-by">Arjun</div>
             {posts.map((post, index) => (
                 <div className="post" key={`post-${index}`}>
@@ -32,6 +37,13 @@ function Home(){
             ))}
         </div>
     );
+}
+
+const styles = {
+    heading: {
+        marginTop: 30,
+        fontSize: 56
+    }
 }
 
 export default Home;
